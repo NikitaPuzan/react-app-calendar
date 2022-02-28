@@ -1,7 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import style from './Login.module.css'
+import {useDispatch, useSelector} from "react-redux";
+import {getAuth} from "../../redux/actions";
+import {Navigate} from "react-router-dom";
+import Login from "./Login";
 
-const Login = () => {
+const LoginContainer = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [usernameDirty, setUsernameDirty] = useState(false)
@@ -9,6 +12,9 @@ const Login = () => {
   const [usernameError, setUsernameError] = useState('Username is required')
   const [passwordError, setPasswordError] = useState('Password is required')
   const [valid, setValid] = useState(false)
+  const dispatch = useDispatch()
+  const isAuth = useSelector(state => state.auth.isAuth)
+
 
   useEffect(() => {
     if (passwordError || usernameError) {
@@ -18,8 +24,7 @@ const Login = () => {
     }
   }, [usernameError, passwordError]);
 
-
-  const blurHandler = (e) => {
+  const blurHandler = e => {
     switch (e.target.name) {
       case 'username':
         setUsernameDirty(true)
@@ -30,7 +35,7 @@ const Login = () => {
     }
   }
 
-  const usernameHandler = (e) => {
+  const usernameHandler = e => {
     setUsername(e.target.value)
     const re = /^[a-z0-9_-]{3,16}$/igm
     if (!re.test(String(e.target.value).toLowerCase())) {
@@ -39,7 +44,7 @@ const Login = () => {
       setUsernameError('')
     }
   }
-  const passwordHandler = (e) => {
+  const passwordHandler = e => {
     setPassword(e.target.value)
     if (e.target.value.length < 5) {
       setPasswordError('Minimum 5 characters length ')
@@ -49,29 +54,25 @@ const Login = () => {
       setPasswordError('')
     }
   }
+  const handleSubmit = e => {
+    e.preventDefault()
+    if(e.target[0].value === 'Admin' && e.target[1].value=== '12345678'){
+      dispatch(getAuth(username))
+    } else {
+      setPasswordError('Имя пользователя или пароль введены неверно')
+    }
+  }
+
+  if(isAuth) return  <Navigate to={'/profile'} />
 
   return (
-    <div className={style.form}>
-      <form>
-        <h1>Authorization</h1>
-        <input value={username}
-               onBlur={e => blurHandler(e)}
-               onChange={e => usernameHandler(e)}
-               name="username"
-               type="text"
-               placeholder="Enter your username.."/>
-        {(usernameDirty && usernameError) && <div style={{color: 'red'}}>{usernameError}</div>}
-        <input value={password}
-               onBlur={e => blurHandler(e)}
-               onChange={e => passwordHandler(e)}
-               name="password"
-               type="password"
-               placeholder="Enter your password.."/>
-        {(passwordDirty && passwordError) && <div style={{color: 'red'}}>{passwordError}</div>}
-        <button disabled={!valid} type="submit">Login</button>
-      </form>
-    </div>
+    <Login password={password}
+           handleSubmit={handleSubmit}
+           passwordHandler={passwordHandler} usernameHandler={usernameHandler}
+           blurHandler={blurHandler} usernameDirty={usernameDirty}
+           passwordDirty={passwordDirty} valid={valid}
+    />
   );
 };
 
-export default Login;
+export default LoginContainer;

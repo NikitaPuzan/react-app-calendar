@@ -1,7 +1,8 @@
 import {GET_AUTH} from "./types";
 
 const initialState = {
-  isAuth: false
+  isAuth: false,
+  username: ''
 }
 
 const authReducer = (state = initialState, action) => {
@@ -9,7 +10,8 @@ const authReducer = (state = initialState, action) => {
     case GET_AUTH:
       return {
         ...state,
-        isAuth: action.auth
+        isAuth: true,
+        username: action.username
       }
     default:
       return state

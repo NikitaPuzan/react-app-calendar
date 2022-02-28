@@ -1,3 +1,3 @@
 import {GET_AUTH} from "./types";
 
-export const getAuth = (auth) => ({type: GET_AUTH, auth})
+export const getAuth = (username) => ({type: GET_AUTH, username})
