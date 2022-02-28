@@ -1,0 +1,67 @@
+.header{
+    padding: 60px 71px 20px 71px;
+    display: flex;
+    justify-content: space-between;
+
+    background-color: #f0f0f0;
+    border-bottom: 3px solid lightgray;
+}
+.header button{
+    margin-right:10px;
+    padding: 7px 10px;
+    font-weight: bold;
+
+    color: white;
+    background-color: #1853ff;
+    border: none;
+    border-radius: 2px;
+}
+.search{
+    display: flex;
+    align-items: center;
+}
+.search input{
+    padding-left: 7px;
+    width:220px;
+    height: 20px;
+}
+.search img{
+    padding: 0 7px;
+}
+
+.selectedDate{
+    padding:20px 71px;
+}
+.selectedDate button{
+    margin-right: 5px;
+    color: black;
+    background-color: white;
+    border: 1px solid;
+    border-radius: 4px;
+}
+.selectedDate span{
+    font-weight: bold;
+    margin: 0 5px;
+}
+
+.calendar{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-gap: 1px;
+    width: 90%;
+    margin: auto;
+    background-color: gray;
+    border: 1px solid gray;
+}
+.item{
+    min-width: 110px;
+    min-height: 150px;
+    padding-left: 7px;
+    color:gray;
+    background-color: white;
+}
+.item:hover{
+    background-color: #f0f0f0;
+    color:black;
+}

@@ -7,8 +7,6 @@
     align-items: center;
     text-align: center;
 }
-.form h2{
-}
 .form form {
     padding:0 20px 20px 20px;
     border-radius: 10px;
@@ -21,6 +19,8 @@
     border: 2px solid #eee;
     border-radius: 10px;
     box-shadow:0 0 15px 4px rgba(0,0,0,0.06);
+
+    font-size: 18px;
 }
 .form button{
     margin: 10px 100px;

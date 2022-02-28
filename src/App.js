@@ -6,6 +6,7 @@ import Home from "./components/Home";
 import Information from "./components/Information";
 import Profile from "./components/Profile";
 import LoginContainer from "./components/Login/LoginContainter";
+import CalendarPage from "./components/CalendarPage/CalendarPage";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/information" element={<Information />} />
         <Route path="/profile" element={<Profile />} />
+        <Route path="/calendar" element={<CalendarPage />} />
         <Route path="/login" element={<LoginContainer />} />
       </Routes>
     </div>

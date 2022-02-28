@@ -1,5 +1,5 @@
 import React from 'react';
-import style from '../Login.module.css'
+import style from './Login.module.css'
 
 const Login = ({
                  handleSubmit, username, password, blurHandler,
