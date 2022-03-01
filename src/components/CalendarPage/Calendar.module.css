@@ -12,7 +12,7 @@
     font-weight: bold;
 
     color: white;
-    background-color: #1853ff;
+    background-color: royalblue;
     border: none;
     border-radius: 2px;
 }
@@ -36,8 +36,13 @@
     margin-right: 5px;
     color: black;
     background-color: white;
-    border: 1px solid;
+    border: 1px solid grey;
     border-radius: 4px;
+}
+.selectedDate button:active, button:hover  {
+    cursor: pointer;
+    background-color: #3F51B5;
+    color: white;
 }
 .selectedDate span{
     font-weight: bold;
@@ -54,14 +59,17 @@
     background-color: gray;
     border: 1px solid gray;
 }
+.currentDay{
+    min-width: 110px;
+    min-height: 150px;
+    padding-left: 7px;
+    background-color: #f0f0f0;
+    color: black
+}
 .item{
     min-width: 110px;
     min-height: 150px;
     padding-left: 7px;
     color:gray;
     background-color: white;
-}
-.item:hover{
-    background-color: #f0f0f0;
-    color:black;
 }
