@@ -17,6 +17,12 @@ const CalendarPage = () => {
   const [events, setEvents] = useState([])
 
   const [event, setEvent] = useState(null)
+  const defaultEvent = {
+    title: '',
+    author: 'Admin',
+    date: moment().format('X')
+  }
+
   const [showForm, setShowForm] = useState(false)
   const [editForm, setEditForm] = useState(false)
 
@@ -36,6 +42,7 @@ const CalendarPage = () => {
   }, [today])
 
   const openAddForm = () => {
+    setEvent(defaultEvent)
     setShowForm(true)
   }
   const openEditForm = () => {
