@@ -1,4 +1,44 @@
-.header{
+.form {
+    position: absolute;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.35);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.formEvent {
+    width: 200px;
+    padding: 40px;
+    background-color: white;
+    color: #DDDDDD;
+    box-shadow: unset;
+    border-radius: 10px;
+}
+
+.formEvent input {
+    margin: 10px 0;
+    padding: 4px 8px;
+    font-size: .85rem;
+    width: 100%;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
+    border-radius: 4px;
+    outline: unset;
+}
+
+.formEvent button {
+    padding: 8px 14px;
+    margin: auto;
+}
+
+.header {
     padding: 60px 71px 20px 71px;
     display: flex;
     justify-content: space-between;
@@ -6,8 +46,9 @@
     background-color: #f0f0f0;
     border-bottom: 3px solid lightgray;
 }
-.header button{
-    margin-right:10px;
+
+.header button {
+    margin-right: 10px;
     padding: 7px 10px;
     font-weight: bold;
 
@@ -16,40 +57,46 @@
     border: none;
     border-radius: 2px;
 }
-.search{
+
+.search {
     display: flex;
     align-items: center;
 }
-.search input{
+
+.search input {
     padding-left: 7px;
-    width:220px;
+    width: 220px;
     height: 20px;
 }
-.search img{
+
+.search img {
     padding: 0 7px;
 }
 
-.selectedDate{
-    padding:20px 71px;
+.selectedDate {
+    padding: 20px 71px;
 }
-.selectedDate button{
+
+.selectedDate button {
     margin-right: 5px;
     color: black;
     background-color: white;
     border: 1px solid grey;
     border-radius: 4px;
 }
-.selectedDate button:active, button:hover  {
+
+.selectedDate button:active, button:hover {
     cursor: pointer;
     background-color: #3F51B5;
     color: white;
 }
-.selectedDate span{
+
+.selectedDate span {
     font-weight: bold;
     margin: 0 5px;
 }
 
-.calendar{
+.calendar {
     display: grid;
     grid-template-columns: repeat(7, 1fr);
     grid-template-rows: repeat(5, 1fr);
@@ -59,17 +106,51 @@
     background-color: gray;
     border: 1px solid gray;
 }
-.currentDay{
+.calendar button{
+    position: relative;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 114px;
+    border: unset;
+    background: unset;
+    cursor: pointer;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+.calendar button:hover, button:active{
+    color: black;
+}
+.day {
+    cursor: pointer;
+}
+
+.eventDay {
+    min-width: 110px;
+    min-height: 150px;
+    padding-left: 8px;
+    background-color: #8ef6ff;
+}
+
+.eventDay .title {
+    margin-top: 3px;
+    max-width: 100%;
+    height: 100%;
+    font-weight: bold;
+}
+
+.currentDay {
     min-width: 110px;
     min-height: 150px;
     padding-left: 7px;
     background-color: #f0f0f0;
     color: black
 }
-.item{
+
+.item {
     min-width: 110px;
     min-height: 150px;
     padding-left: 7px;
-    color:gray;
+    color: gray;
     background-color: white;
 }

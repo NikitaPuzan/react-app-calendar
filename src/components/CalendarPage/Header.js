@@ -2,12 +2,12 @@ import React from 'react';
 import style from './Calendar.module.css'
 import search from '../../assets/images/search.png'
 
-const Header = () => {
+const Header = ({openAddForm, openEditForm}) => {
   return (
     <div className={style.header}>
       <div>
-        <button>Добавить</button>
-        <button>Обновить</button>
+        <button onClick={openAddForm}>Добавить</button>
+        <button onClick={openEditForm}>Обновить</button>
       </div>
       <div className={style.search}>
         <img src={search} width="20"  alt=""/>
