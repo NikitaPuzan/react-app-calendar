@@ -32,6 +32,8 @@ const LoginContainer = () => {
       case 'password':
         setPasswordDirty(true)
         break
+      default:
+        break
     }
   }
 

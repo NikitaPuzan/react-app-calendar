@@ -39,7 +39,7 @@ const CalendarPage = () => {
 
   useEffect(() => {
     setEvents(eventsData.filter(e => e.date >= startDay && e.date <= endDay))
-  }, [today])
+  }, [endDay, eventsData, startDay, today])
 
   const openAddForm = () => {
     setEvent(defaultEvent)
