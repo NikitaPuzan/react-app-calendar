@@ -26,6 +26,7 @@ const Login = ({
                type="password"
                placeholder="Enter your password.."/>
         {(passwordDirty && passwordError) && <div style={{color: 'red'}}>{passwordError}</div>}
+        <button onClick={() => alert('Username: Admin \nPassword: 12345678')}>Help</button>
         <button disabled={!valid} type="submit">Login</button>
       </form>
     </div>
