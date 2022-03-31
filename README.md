@@ -1,1 +1,1 @@
-[Deployed on netlify](https://app.netlify.com/sites/melodic-granita-495e85/overview)
+[Deployed on netlify](https://melodic-granita-495e85.netlify.app/)
